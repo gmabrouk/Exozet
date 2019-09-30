@@ -1,0 +1,56 @@
+div.left-container{
+
+    span.left-container__date{
+        color: #999999;
+    }
+
+    h1{
+        font-weight: 600;
+    }
+
+    p{
+        max-width: 625px;
+
+        &:last-of-type{
+            margin: 0;
+        }
+    }
+    
+    img.imgAbt {
+        margin: 17px 20px 15px 0;
+        border: 2px solid #ffffff;
+        width: 220px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        float: left;
+    }
+    
+    div.img-par-container {
+        max-width: 655px;
+
+        div.img-container{
+            position: relative;
+
+            span.caption{
+                position: absolute;
+                top: 145px;
+                left: 0;
+                font-size: 11px;
+                color: #989898;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 400px) {
+	
+	img.imgAbt { 
+        display: block;
+        margin: 30px auto !important;
+        width: 350px !important;	
+    } 
+
+    span.caption{
+        top: 235px !important;
+    }
+
+}

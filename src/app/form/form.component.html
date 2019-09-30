@@ -1,0 +1,45 @@
+<div class="form-container">
+  <h1 class="text-uppercase">Formular /</h1>
+  
+  
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <p class="notice">Felder mit einem * sind Pflichtfelder.</p>
+    <div *ngIf="submitted && messageForm.controls.name.errors">
+        <p class="error-msg" *ngIf="messageForm.controls.name.errors.required">The Name is required</p>
+      </div>
+    <div *ngIf="submitted && messageForm.controls.email.errors">
+      <p class="error-msg" *ngIf="messageForm.controls.email.errors.required">The Email is required</p>
+    </div>
+    <div *ngIf="submitted && messageForm.controls.telefon.errors">
+        <p class="error-msg" *ngIf="messageForm.controls.telefon.errors.invalidNumber">The phone number shouldn't contain special characters</p>
+      </div>
+    <div *ngIf="submitted && messageForm.controls.kommentar.errors">
+      <p class="error-msg" *ngIf="messageForm.controls.kommentar.errors.required">A commentar is required</p>
+    </div>
+    <div class="form-group row">
+      <label for="inputName" class="col-md-3 col-form-label">Name*</label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" id="inputName" formControlName="name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail" class="col-md-3 col-form-label">Email*</label>
+      <div class="col-md-9">
+        <input type="email" class="form-control" id="inputEmail" formControlName="email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputphone" class="col-md-3 col-form-label">Telefon</label>
+      <div class="col-md-9">
+        <input type="number" class="form-control" id="inputphone"  formControlName="telefon">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputcomment" class="col-md-3 col-form-label">Kommentar*</label>
+      <div class="col-md-9">
+        <textarea class="form-control" id="inputcomment" formControlName="kommentar"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn">Abschicken</button>
+  </form>
+</div>

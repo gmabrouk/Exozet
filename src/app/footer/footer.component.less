@@ -1,0 +1,33 @@
+div.footer-container{
+    height: 10vh;
+    padding-right: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    nav.navfooter{
+        border-top: 1px solid #c3c1c6;
+        padding: 2% 0 2% 2%;
+
+        ul { margin:0; padding:0;
+            float: right;
+
+            li { 
+                float:left; 
+                list-style:none;
+                color:#738e23; 
+                &:after {
+                    content:"|";
+                }
+                &:last-child:after { content:""; /* No separator for the last item in the list */ }
+                
+                a{
+                    margin:0 8px;
+                    cursor: pointer;
+                    color:#738e23; 
+                    text-decoration:none;         
+                }
+            }
+        }           
+    }
+
+}
